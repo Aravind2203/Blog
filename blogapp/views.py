@@ -3,37 +3,7 @@ from django.http import HttpResponse
 from .models import Post,ViewsModel,Comment,Like,Category
 from django.core.paginator import Paginator
 # Create your views here.
-'''
-def sample(request,slugtitle):
-    if not request.session.exists(request.session.session_key):
-            request.session.create()
-    p=Post.objects.filter(TitleSlug=slugtitle)
-    if p.exists():
-        v=ViewsModel.objects.filter(User=request.session.session_key)
-        
-        if len(v)>0:
-            vobject=v[0]
-            if vobject.Post==p[0]:
-                pass
-            else:
-            p=Post.objects.get(TitleSlug=slugtitle)
-            p.Views=p.Views+1
-            p.save(update_fields=['Views'])
-            #v=ViewsModel(User=request.session.session_key,Post=p)
-            
-        else:
-            p=Post.objects.get(TitleSlug=slugtitle)
-            p.Views=p.Views+1
-            p.save(update_fields=['Views'])
-            v=ViewsModel(User=request.session.session_key,Post=p)
-            
-            v.save()
-        p=Post.objects.get(TitleSlug=slugtitle)
-        print(p.Content)
-        return render(request,'sample.html',context={'post':p})
-    else:
-        return HttpResponse("Error")
-'''
+
 
 
 def home(request):
