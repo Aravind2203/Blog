@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <head lang="en">
+            <title>TurnOffHumanity</title>
+            <meta charset="utf-8" />
+        
+            <!--Logo image at top-->
+            <link rel="icon" href="" alt="tabicon">
+
+            <!--FontAwesome CDN-->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <!--Bootstrap CDN-->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            
+             <!--JQuery CDN-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!--CSS import-->
+        <link rel = "stylesheet" href ="/static/styles/navfoot.css">
+        <link rel = "stylesheet" href ="/static/styles/blog.css">
+    
+        </head>
+
+    <body>
+            <!-- ======================== navbar ============================== -->
+        <nav class="navbar navbar-expand-lg navbar-light" id="navbarmain">
+            <a class="navbar-brand" href="#" id="navtitletoggle">TURNOFFHUMANITY</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" id="navtoggle" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-bars" id="navtoggleicon"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <a class="navbar-brand" href="index.html" id="navtitle">TURNOFFHUMANITY</a>
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item ">
+                  <a class="nav-link" href="index.html" id="navitems1">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navitems" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Blog
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownLG">
+                      <a class="dropdown-item" href="blog.html">All</a>
+                      <a class="dropdown-item" href="content.html">Travel</a>  
+                    </div>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#story" id="navitems">Story</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact" id="navitems">Contact</a>
+                  </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0" id="searchtextbox">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchtextfield">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchbtn"><i class="fa fa-search" id="searchicon"></i></button>
+              </form>
+            </div>
+          </nav>
+       <!--======================= end of navbar =========================================-->
+
+<!--======================= start of body =========================================-->
+
+          <!---Blog Bar Content title--->
+
+    <section class="blogbar-display">
+
+        <h5>All Blogs</h5>
+
+        <div class="blogbar-search">
+            <!-- The form -->
+            <form class="blogbar-searchform" action="#">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>        
+        </div>
+    </section>
+
+    <!---Blog Bar Content --->
+    <section class="blogbar-content">
+        <h5>Blogs</h5>
+        <hr>
+        <!--
+        <div class="row">
+            <div class="blogbar-box1">
+                <div class="column">
+                   <h5><a href="content.html">5 bloggers share their advice for successful blogging .blogbar-box1 .column .blogbar-box1 .column</a></h5>
+                <h6>
+                        People who are refusing to get a COVID-19 vaccine are increasing their risk of contracting and transmitting the virus. They could also be
+                         potentially prolonging the pandemic, contributing to spikes in 
+                    </h6>
+                    <div class="row" id="blogbox-r1">
+                        <div class="blogbox-r1-box1"><i class="fa fa-user"></i> &nbsp;  Author</div>
+                        <div class="blogbox-r1-box2"><i class="fa fa-calendar"></i>&nbsp;  Jan 20,2020</div>
+                    </div>
+                    <hr > 
+                    <div class="row" id="blogbox-r2">
+                        <div class="blogbox-r2-box" id="r2-b-icon1"><i class="fa fa-comments-o"></i>&nbsp;  100</div>
+                        <div class="blogbox-r2-box" id="r2-b-icon2"><i class="fa fa-eye"></i>&nbsp; 10</div>
+                        <div class="blogbox-r2-box" id="r2-b-icon3"><i class="fa fa-thumbs-up"></i>&nbsp;20</div>
+                        <div class="blogbox-r2-box" id="r2-b-icon4"><a href="#"><i class="fa fa-share-alt"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="blogbar-box2">
+                <img id="blogbox-img" src="https://static.wixstatic.com/media/570fd0e9b5094cdaa8ba958bd6dded88.jpg/v1/fill/w_925,h_695,al_c,q_90,usm_0.66_1.00_0.01/570fd0e9b5094cdaa8ba958bd6dded88.webp">
+            </div>
+        </div>
+    -->
+    {% for post in page_obj %}
+        <div class="row">
+            <div class="blogbar-box1">
+                <div class="column">
+                    <h5><a href="/posts/{{post.TitleSlug}}">{{post.Title}}</a></h5>
+                <h6>
+                        {{post.OverView}}
+                    </h6>
+                    <div class="row" id="blogbox-r1">
+                        <div class="blogbox-r1-box1"><i class="fa fa-user"></i> &nbsp;  Author</div>
+                        <div class="blogbox-r1-box2"><i class="fa fa-calendar"></i>&nbsp;  {{post.DateAdded}}</div>
+                    </div>
+                    <hr > 
+                    <div class="row" id="blogbox-r2">
+                        <div class="blogbox-r2-box" id="r2-b-icon1"><i class="fa fa-comments-o"></i>&nbsp;  {{post.CommentCount}}</div>
+                        <div class="blogbox-r2-box" id="r2-b-icon2"><i class="fa fa-eye"></i>&nbsp; {{post.Views}}  </div>
+                        <div class="blogbox-r2-box" id="r2-b-icon3"><i class="fa fa-thumbs-up"></i>&nbsp; {{post.Likes}} </div>
+                        <div class="blogbox-r2-box" id="r2-b-icon4"><a href="#"><i class="fa fa-share-alt"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="blogbar-box2">
+                <img id="blogbox-img" src="{{post.Thumbnail.url}}">
+            </div>
+        </div>
+        {% endfor %}
+            <!--Pagination-->
+    <!--<div class="blog-pagination">
+        <ul class="pagination">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+          </ul>
+    </div>-->
+    <div class="blog-pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    </section>
+ 
+
+
+    
+
+
+
+<!--======================= end of body =========================================-->
+
+
+      <!--- ====================================footer=--==================================== -->
+        <footer style="width: 100%;">
+            <div class="downfoot"  id="contact" style="width: 100%;">
+                <div class="footer-content" id="footercontent" style="width: 100%;">
+                    <h3>Turnoffhumanity</h3>
+                    <p id="footerbrief">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo iste corrupti doloribus odio sed!</p>
+                    <p>
+                        <span><a href="index.html" id="footerlinks">Home</a></span>
+                        <span>|</span>
+                        <span><a href="blog.html" id="footerlinks">Blog</a></span>
+                        <span>|</span>
+                        <span><a href="index.html#story" id="footerlinks">Story</a></span>
+                        <span>|</span>
+                        <span><a href="#contact" id="footerlinks">Contact</a></span>
+                    </p>
+                    <ul class="socials">
+                        <li><a href="#"><i class="fa fa-facebook-square" style="font-size: 1.5rem;"></i>  </a></li>
+                        <li><a href="#"><i class="fa fa-instagram" style="font-size: 1.5rem;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" style="font-size: 1.5rem;"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-bottom" id="footerbottom" style="width: 100%;">
+                    <p>copyright &copy;2020  Turnoffhumanity . All rights are reserved</p>
+                    <p>From <a href="https://garudatechnology.in/" target="_blank" rel="noopener noreferrer" style="color: white; font-weight: 500;">Garuda</a></p>
+                </div>
+                </div>
+           </footer>
+
+       <!-- ==================================== end of footer ======================================-->
+
+      <script>
+
+      </script>
+    </body>
+
+</html>

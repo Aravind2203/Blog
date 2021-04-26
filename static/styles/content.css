@@ -1,0 +1,361 @@
+*{
+    font-family: 'Quicksand',sans-serif;
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#all-posts{
+    font-size: 18px;
+    margin-top: 15px;
+}
+.blog{
+    margin-top: 15px ;
+    border: 0.5px solid #A2BFEA;
+}
+
+/* ============ wrapper blog ======================== */
+.wrapper-blog{
+    margin: 0 auto;
+    width: 700px;
+   
+}
+.blog-header h5{
+    font-size: 16px;
+    margin-top: 20px;
+}
+.blog-title h3{
+    font-size: 26px ;
+    margin-top: 20px;
+}
+
+.wrapper-img img{
+    margin: 0 auto;
+    width: 700px;
+    height: 500px;
+    margin-top: 30px;
+    margin-bottom: 40px ;
+    object-fit: cover;
+}
+.blog-body-text p{
+    font-size: 20px;
+}
+
+.blog-likes .row span{
+    padding: 20px;
+}
+.blog-likes .row span a{
+    color: red;
+    text-decoration: none;
+}
+
+
+
+/* ======================= blog comment *************/
+.blog-comment{
+    margin-top: 15px ;
+    margin-bottom: 15px ;
+    border: 0.5px solid #A2BFEA;
+}
+.blog-comment h2{
+    padding-left: 110px;
+    font-size: 20px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+.blog-comment hr{
+    width: 80%;
+}
+.comment-box input{
+    margin-top: 50px;
+    margin-left: 140px;
+    margin-bottom:50px;
+    height: 1%;
+    padding: 20px;
+    width:70%
+}
+
+/* =================== comment wrapper  ===================== */
+.comment-text-wrapper{
+    margin: 0 auto;
+    width: 750px;
+}
+.comment-text-wrapper p{
+    border: 0.5px solid #C0C0C0;
+    color: #817F7F;
+    font-size: 16px; 
+    padding: 15px; 
+}
+
+/* =================== media screen 320px  ===================== */
+
+@media screen and (max-width:330px) and (min-width:0px) {
+    .wrapper{
+        margin: 0 10px;
+        width: 94%;
+    }
+    .wrapper-blog {
+        margin: 0 auto;
+        width: 96%;
+    }
+    .wrapper-img img {
+        margin: 0 0px;
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        object-fit: contain;
+    }
+    .blog-header h5 {
+        font-size: 17px;
+    }
+    .blog-title h3 {
+        font-size: 20px;
+    }
+    .blog-body-text p {
+        font-size: 12px;
+    }
+    .blog-likes .row span {
+        padding: 20px;
+        font-size: 16px;
+    }
+    .blog-comment h2 {
+        font-size: 24px;
+        padding-left: 30px;
+    }
+    .comment-box input {
+        margin-top: 30px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        height: 1%;
+        padding:8px;
+        width: 85%;
+    }
+    .form-control{
+        font-size: 15px !important;
+    }
+    .comment-text-wrapper p {
+        border: 0.5px solid #C0C0C0;
+        color: #817F7F;
+        font-size: 11px;
+        margin-left: 10px;
+        padding: 10px;
+        width: 93%;
+    }
+    #all-posts {
+        font-size: 15px;
+    }
+    .comment-text-wrapper {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+/* =================== media screen 380px  ===================== */
+
+@media screen and (max-width:380px) and (min-width:330px){
+    .wrapper{
+        margin: 0px 7px;
+        width: 96%;
+    }
+    .wrapper-blog {
+        margin: 0 10px;
+        width: 95%;
+    }
+    .wrapper-img img {
+        margin: 0;
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        object-fit: contain;
+    }
+    .blog-header h5 {
+        font-size: 18px;
+    }
+    .blog-title h3 {
+        font-size: 20px;
+    }
+    .blog-body-text p {
+        font-size: 13px;
+    }
+    .blog-likes .row span {
+        padding: 20px;
+        font-size: 16px;
+    }
+    .blog-comment h2 {
+        font-size: 24px;
+        padding-left: 30px;
+    }
+    .comment-box input {
+        margin-top: 30px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        height: 1%;
+        padding: 10px;
+        width: 85%;
+    }
+    .form-control{
+        font-size: 15px !important;
+    }
+    .comment-text-wrapper p {
+        border: 0.5px solid #C0C0C0;
+        color: #817F7F;
+        font-size: 12px;
+        margin-left: 5px;
+        padding: 6px;
+        width: 290px;;
+    }
+    #all-posts {
+        font-size: 15px;
+        margin-top: 12px;
+    }
+    .comment-text-wrapper {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+/* =================== media screen 425px  ===================== */
+
+@media screen and (max-width:430px) and (min-width:380px){
+    .wrapper{
+        margin: 0px 7px;
+        width: 96%;
+    }
+    .wrapper-blog {
+        margin: 0 10px;
+        width: 95%;
+    }
+    .wrapper-img img {
+        margin: 0;
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        object-fit: contain;
+    }
+    .blog-header h5 {
+        font-size: 18px;
+    }
+    .blog-title h3 {
+        font-size: 20px;
+    }
+    .blog-body-text p {
+        font-size: 13px;
+    }
+    .blog-likes .row span {
+        padding: 20px;
+        font-size: 16px;
+    }
+    .blog-comment h2 {
+        font-size: 24px;
+        padding-left: 30px;
+    }
+    .comment-box input {
+        margin-top: 30px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        height: 1%;
+        padding: 10px;
+        width: 85%;
+    }
+    .form-control{
+        font-size: 15px !important;
+    }
+    .comment-text-wrapper p {
+        border: 0.5px solid #C0C0C0;
+        color: #817F7F;
+        font-size: 12px;
+        margin-left: 5px;
+        padding: 6px;
+        width: 96%;
+    }
+    #all-posts {
+        font-size: 15px;
+        margin-top: 12px;
+    }
+    .comment-text-wrapper {
+        margin: 0px 19px;
+        width: 86%;
+    }
+}
+
+/* =================== media screen 768px  ===================== */
+
+@media screen and (max-width:790px) and (min-width:430px){
+    .wrapper{
+        margin: 0px 7px;
+        width: 96%;
+    }
+    .wrapper-blog {
+        margin: 0 10px;
+        width: 95%;
+    }
+    .wrapper-img img {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        object-fit: contain;
+        margin: 0 6px;
+    }
+    .blog-header h5 {
+        font-size: 20px;
+    }
+    .blog-title h3 {
+        font-size: 23px;
+    }
+    .blog-body-text p {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .blog-likes .row span {
+        padding: 20px;
+        font-size: 16px;
+    }
+    .blog-comment h2 {
+        font-size: 24px;
+        padding-left: 30px;
+    }
+    .comment-box input {
+        margin-top: 30px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        height: 1%;
+        padding: 10px;
+        width: 94%;
+    }
+    .form-control{
+        font-size: 15px !important;
+    }
+    .comment-text-wrapper p {
+        border: 0.5px solid #C0C0C0;
+        color: #817F7F;
+        font-size: 12px;
+        margin-left: 25px;
+        padding: 6px;
+        width: 100%;
+    
+    }
+    #all-posts {
+        font-size: 20px;
+        margin-top: 12px;
+    }
+    .comment-text-wrapper {
+        margin: 0px 19px;
+        width: 86%;
+    }
+}
+
+
+/* =================== media screen 768px only wrapper ===================== */
+
+@media screen and (max-width:1000px) and (min-width:790px){
+
+.wrapper {
+    margin: 0 auto;
+    width: 90%;
+}
+
+}

@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,500');
+
+/*Change for font family
+Navbar Items == line 6
+Footer === line 112
+*/
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    /*Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif*/ 
+    /*Verdana, Geneva, Tahoma, sans-serif*/
+    /*questrial, sans-serif*/
+    /*'Oswald', sans-serif;*/
+    /*'Quicksand', sans-serif */
+
+}
+  /*Navbar*/
+#navbarmain{
+    background-color: #000;
+}
+
+/*Drop down menu*/
+.dropdown-menu{
+    border-radius: 3px;
+    background-color: #000;
+    opacity: 0.9;
+}
+.dropdown-item{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 200;
+}
+
+.dropdown-menu :hover{
+    background-color: #000;
+    font-weight: 500;
+    color: #e6ce92;
+}
+
+#navitems , #navtitle , #navitems1{
+    color: white;
+}
+
+#navtitletoggle{
+    text-align: left;
+}
+
+#navtitle, #navtitletoggle{
+    font-size: 22px;
+    font-weight: 500;
+    background-color: #e6ce92;
+    background-image: linear-gradient(180deg, white,#e6ce92);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+#navitems{
+    padding-left: 25px;
+
+}
+
+#navitems1{
+    padding-left: 80px;
+}
+
+#navitems1,#navitems{
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+}
+
+#navitems1:hover,#navitems:hover{
+    font-size: 18px;
+    color: #e6ce92;
+}
+
+/*Search Button*/
+#searchtextfield{
+    background-color: transparent;
+    border-bottom-color: white;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    color: white;
+}
+
+#searchbtn{
+    border-color: #e6ce92; 
+}
+
+#searchbtn:hover{
+    border-color: #e6ce92;
+    background-color: #e6ce92 !important;
+}
+
+#searchicon{
+    color: #e6ce92 ;
+    opacity: 0.7;
+}
+
+#searchicon:hover{
+    color: white ;
+}
+
+#navtoggle{
+    background-color: transparent;
+    width: 50px;
+}
+
+#navtoggleicon{
+    color: white;
+    opacity: 0.7;
+}
+
+
+/*Footer*/
+.downfoot{
+    clear: both;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.9;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #fff;
+    font-family: questrial, sans-serif;
+    font-weight: 100;
+
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 24px;
+    text-transform: capitalize;
+    line-height: 3rem;
+    opacity: 0.9;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 20px;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #111;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 16px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom a{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+
+#footerlinks{
+    color: whitesmoke;
+    font-size: smaller;
+}
+
+#footerbrief{
+    color: white;
+    opacity: 0.7;
+    font-size: unset;
+}
+
+@media screen  and (max-width:992px){
+    #navtitle{
+        display: none;
+    }
+
+    #navitems1, #navitems{
+        padding-left: 10px;
+    }
+}
+
+@media screen  and (min-width:992px){
+    #navtitletoggle{
+        display: none;
+    }
+}
+
+@media screen  and (max-width:576px){
+    #searchtextfield{
+        width: 240px;
+    }
+}
