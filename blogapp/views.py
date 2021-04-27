@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import Post,ViewsModel,Comment,Like,Category
+from .models import Post,ViewsModel,Comment,Like,Category,Courosel,AboutUs,ReaderList
 from django.core.paginator import Paginator
+from django.db.models import Q
 # Create your views here.
 '''
 def sample(request,slugtitle):
@@ -37,10 +38,16 @@ def sample(request,slugtitle):
 
 
 def home(request):
-    post=Post.objects.all()
+    post=Post.objects.all()    
     post=post[:3]
     categories=Category.objects.all()
-    return render(request,'index.html',context={'post':post,'categories':categories})
+    courosels=Courosel.objects.all()
+    aboutus=AboutUs.objects.all()
+    if len(aboutus)>0:
+        about=aboutus[0]
+        return render(request,'index.html',context={'post':post,'categories':categories,'courosels':courosels,'about':about})
+    else:
+        return render(request,'index.html',context={'post':post,'categories':categories,'courosels':courosels})
 
 def blogViewPage(request,slug):
     if not request.session.exists(request.session.session_key):
@@ -67,7 +74,8 @@ def blogViewPage(request,slug):
             NewViewObject=ViewsModel(User=request.session.session_key,Post=post)
             NewViewObject.save()
         comments=Comment.objects.filter(Post=post)
-        return render(request,'content.html',{'post':post,'comments':comments})
+        categories=Category.objects.all()
+        return render(request,'content.html',{'post':post,'comments':comments,'categories':categories})
 
     else:
         return HttpResponse('''
@@ -129,20 +137,37 @@ def addComment(request,slug):
 
 
 def categoryFilter(request,category):
-    categoryObjects=Category.objects.filter(Name=category)
+    categoryObjects=Category.objects.filter(SlugName=category)
     if len(categoryObjects)>0:
         categoryObject=categoryObjects[0]
         posts=Post.objects.filter(Category=categoryObject)
         paginator=Paginator(posts,8)
         page_number=request.GET.get('page')
         page_obj=paginator.get_page(page_number)
-        return render(request,'blog.html',context={'page_obj':page_obj})
+        categories=Category.objects.all()
+        return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories})
 
-'''
-contact_list = Contact.objects.all()
-    paginator = Paginator(contact_list, 25) # Show 25 contacts per page.
+def search(request):
+    query=request.GET.get('search')
+    
+    posts=[]
+    for q in set(query.split()):
+        post=Post.objects.filter(Q(Title__contains=q) | Q(OverView__contains=q) |Q(Content__contains=q))
+        if post not in posts:
+            posts.extend(post)
+    if len(posts)>0:
+        paginator=Paginator(posts,8)
+        page_number=request.GET.get('page')
+        page_obj=paginator.get_page(page_number)
+        categories=Category.objects.all()
+        return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories})
+    else:
+        return HttpResponse('''<h1>
+        Bad query
+        </h1>''')
 
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    return render(request, 'list.html', {'page_obj': page_obj})
-'''
+def addReader(request):
+    email=request.POST.get('email')
+    reader=ReaderList(Email=email)
+    reader.save()
+    return redirect('home')

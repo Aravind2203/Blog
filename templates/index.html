@@ -50,7 +50,7 @@
                     <!--<a class="dropdown-item" href="blog.html">All</a>
                     <a class="dropdown-item" href="content.html">Travel</a> -->
                       {% for category in categories %}
-                      <a class="dropdown-item" href="/categories/{{category}}">{{category}}</a>
+                      <a class="dropdown-item" href="/categories/{{category.SlugName}}">{{category}}</a>
                       {% endfor %}
                   </div>
             </li>
@@ -61,8 +61,8 @@
                   <a class="nav-link" href="#contact" id="navitems">Contact</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0" id="searchtextbox">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchtextfield">
+            <form class="form-inline my-2 my-lg-0" id="searchtextbox" method="GET" action='/search'>
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search" id="searchtextfield">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchbtn"><i class="fa fa-search" id="searchicon"></i></button>
             </form>
           </div>
@@ -78,6 +78,7 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>-->
             <div class="carousel-inner">
+              <!--
               <div class="carousel-item active">
                 <img class="d-block w-100" id="carouselimg" src="media/siteimages/carousel2.jpg" alt="First blog slide">
                 <div class="carousel-caption">
@@ -97,7 +98,18 @@
               <div class="carousel-caption">
                 <h5 id="carouseltext">Hello Everyone, This is Garuda Technologies, an app and web services.</h5>
                 <a href="#ReadMore" class="btn btn-primary" id="readmorebtn">Read Now</a>  
-            </div>  
+            </div> 
+          -->
+          {% for courosel in courosels %}
+          <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}" >
+            <img class="d-block w-100" id="carouselimg" src="{{courosel.Image.url}}" alt="Third blog slide">
+            <div class="carousel-caption">
+              <h5 id="carouseltext">{{courosel.Caption}}</h5>
+              <a href="/posts/{{courosel.Post}}" class="btn btn-primary" id="readmorebtn">Read Now</a>  
+          </div>
+          </div>
+          {% endfor %}
+
           </div>
 
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -209,7 +221,7 @@
                 <h1 id="lb-title">Our Story</h1>
                 <div class="mystory-content">
                   <h4 id="mystory-txt">
-                    "About Us Page Design: Form & Function. This is the most basic. You want to make sure that your About Us page is attractive and compelling—a" 
+                    "{{about}}" 
                   </h4>
                 </div>
               </div>
@@ -222,9 +234,12 @@
             <h2>Join My ReaderList Now</h2>
         </div>
         <div class="contact">
-        <input type="email" class="form-control" style="border-radius: 1px;" id="exampleFormControlInput1" placeholder="Email Address" />
+          <form method="POST" action="addemail" >
+            {% csrf_token %}
+        <input type="email" class="form-control" style="border-radius: 1px;" id="exampleFormControlInput1" placeholder="Email Address" required name="email"/>
         <button type="submit" class="btn-contact">SIGN UP</button>
-        </div>
+            </form>
+      </div>
     </div>
 
         <!--Footer-->

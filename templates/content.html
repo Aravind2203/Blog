@@ -33,7 +33,7 @@
               <i class="fa fa-bars" id="navtoggleicon"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-              <a class="navbar-brand" href="index.html" id="navtitle">TURNOFFHUMANITY</a>
+              <a class="navbar-brand" href="/" id="navtitle">TURNOFFHUMANITY</a>
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item ">
                   <a class="nav-link" href="index.html" id="navitems1">Home <span class="sr-only"></span></a>
@@ -43,8 +43,9 @@
                       Blog
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownLG">
-                    <a class="dropdown-item" href="blog.html">All</a>
-                    <a class="dropdown-item" href="content.html">Travel</a>
+                    {% for category in categories %}
+                      <a class="dropdown-item" href="/categories/{{category.SlugName}}">{{category}}</a>
+                      {% endfor %}
                       </div>
               </li>
                 <li class="nav-item">
@@ -54,8 +55,8 @@
                     <a class="nav-link" href="#contact" id="navitems">Contact</a>
                   </li>
               </ul>
-              <form class="form-inline my-2 my-lg-0" id="searchtextbox">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchtextfield">
+              <form class="form-inline my-2 my-lg-0" id="searchtextbox" method="GET" action="/search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="searchtextfield">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchbtn"><i class="fa fa-search" id="searchicon"></i></button>
               </form>
             </div>
