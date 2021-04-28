@@ -4,37 +4,7 @@ from .models import Post,ViewsModel,Comment,Like,Category,Courosel,AboutUs,Reade
 from django.core.paginator import Paginator
 from django.db.models import Q
 # Create your views here.
-'''
-def sample(request,slugtitle):
-    if not request.session.exists(request.session.session_key):
-            request.session.create()
-    p=Post.objects.filter(TitleSlug=slugtitle)
-    if p.exists():
-        v=ViewsModel.objects.filter(User=request.session.session_key)
-        
-        if len(v)>0:
-            vobject=v[0]
-            if vobject.Post==p[0]:
-                pass
-            else:
-            p=Post.objects.get(TitleSlug=slugtitle)
-            p.Views=p.Views+1
-            p.save(update_fields=['Views'])
-            #v=ViewsModel(User=request.session.session_key,Post=p)
-            
-        else:
-            p=Post.objects.get(TitleSlug=slugtitle)
-            p.Views=p.Views+1
-            p.save(update_fields=['Views'])
-            v=ViewsModel(User=request.session.session_key,Post=p)
-            
-            v.save()
-        p=Post.objects.get(TitleSlug=slugtitle)
-        print(p.Content)
-        return render(request,'sample.html',context={'post':p})
-    else:
-        return HttpResponse("Error")
-'''
+
 
 
 def home(request):
@@ -144,6 +114,7 @@ def categoryFilter(request,category):
         paginator=Paginator(posts,8)
         page_number=request.GET.get('page')
         page_obj=paginator.get_page(page_number)
+<<<<<<< HEAD
         categories=Category.objects.all()
         return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories})
 
@@ -171,3 +142,15 @@ def addReader(request):
     reader=ReaderList(Email=email)
     reader.save()
     return redirect('home')
+=======
+        return render(request,'blog.html',context={'page_obj':page_obj})
+
+'''
+contact_list = Contact.objects.all()
+    paginator = Paginator(contact_list, 25) # Show 25 contacts per page.
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'list.html', {'page_obj': page_obj})
+'''
+>>>>>>> 7ca86f9ca20faf9d198db693ca5c1b5592eac820
