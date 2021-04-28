@@ -114,7 +114,6 @@ def categoryFilter(request,category):
         paginator=Paginator(posts,8)
         page_number=request.GET.get('page')
         page_obj=paginator.get_page(page_number)
-<<<<<<< HEAD
         categories=Category.objects.all()
         return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories})
 
@@ -142,8 +141,6 @@ def addReader(request):
     reader=ReaderList(Email=email)
     reader.save()
     return redirect('home')
-=======
-        return render(request,'blog.html',context={'page_obj':page_obj})
 
 '''
 contact_list = Contact.objects.all()
@@ -153,4 +150,4 @@ contact_list = Contact.objects.all()
     page_obj = paginator.get_page(page_number)
     return render(request, 'list.html', {'page_obj': page_obj})
 '''
->>>>>>> 7ca86f9ca20faf9d198db693ca5c1b5592eac820
+
