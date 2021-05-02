@@ -135,9 +135,12 @@ def search(request):
         return HttpResponse(''<h1>
         Bad query
         </h1>'')'''
-    posts=Post.objects.filter(Q(Title__contains=q) | Q(OverView__contains=q) |Q(Content__contains=q) |Q(Category__Name=q))
-    if len(posts)>0:
-        posts
+    post=Post.objects.filter(Q(Title__contains=q) | Q(OverView__contains=q) |Q(Content__contains=q) |Q(Category__Name=q))
+    if len(post)>0:
+        posts=[]
+        for i in post:
+            if i not in posts:
+                posts.append(i)
         paginator=Paginator(posts,8)
         page_number=request.GET.get('page')
         page_obj=paginator.get_page(page_number)
