@@ -31,7 +31,8 @@ body{
     text-align: center;
     text-transform: uppercase;
     line-height: inherit;
-    font-weight: 800;
+    font-weight: bold; /*Changed from 800 to bold*/
+    font-family:  Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -61,14 +62,17 @@ body{
 }
 
 
+
+
 /* =================================== reader list ============================= */
 .parallax4 {
-    background: url("/static/media/siteimages/bg.png") no-repeat center;
+    background: url("/static/media/required/bg.png") no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     height: 70vh;
     width: 100%;
     margin-top: -8px;
+    padding-top: 60px;
 }
 
 .parallax4 .title h2{
@@ -135,6 +139,7 @@ opacity: 0.5;
 }
 
 /*Blog box*/
+
 .latestblog{
     margin-left: 45px;
     margin-right: 45px;
@@ -182,19 +187,18 @@ opacity: 0.5;
 
 #mystory-txt{
     color: white;
-    font-family:  Papyrus;
+    font-family:  Georgia, Times, "Times New Roman", serif;/*Papyrus => georgia*/
     font-weight: 100;
     text-align: center;
     margin-top: 60px;
     padding-bottom: 70px;
-
 }
 
 /*Latest Blogs*/
 .latestblogs-container{
     margin-left: 5%;
     margin-right: 5%;
-    background-color: #f8f9fa;
+    background-color: black; /*#f8f9fa -> black*/
 }
 
 /*.blog-thumb*/
@@ -344,7 +348,9 @@ opacity: 0.5;
     #carouseltext{
         font-size: 32px;
     }
-
+    .parallax4{
+        padding-top: 50px;
+    }
 }
 
 @media screen and (max-width:900px){
@@ -360,6 +366,9 @@ opacity: 0.5;
    .contact .btn-contact {
        padding: 0.3rem;
    }
+   .parallax4{
+    padding: 20px;
+}
 
 }
 
@@ -371,6 +380,9 @@ opacity: 0.5;
         font-size: 24px;
         padding-bottom: 5%;
     }
+    .parallax4{
+        padding: 20px;
+    }
 }
 
 
@@ -378,6 +390,9 @@ opacity: 0.5;
     #carouseltext{
         font-size: 17px;
         text-align: right;
+    }
+    .parallax4{
+        padding-top: 10%;
     }
     .parallax4 .title h2{
         font-size: 36px;
@@ -392,6 +407,9 @@ opacity: 0.5;
 }
 
 @media screen and (max-width:430px){
+    .parallax4{
+        padding-top: 18%;
+    }
     .parallax4 .title h2{
          font-size: 28px;
     }

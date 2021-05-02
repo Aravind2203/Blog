@@ -46,6 +46,8 @@ body{
 }
 
 #navtitle, #navtitletoggle{
+    /*Default family null*/
+    font-family: Palatino , 'Roman';
     font-size: 22px;
     font-weight: 500;
     background-color: #e6ce92;
@@ -140,6 +142,7 @@ body{
     text-align: center;
 }
 .footer-content h3{
+    font-family : Helvetica;
     font-size: 24px;
     text-transform: capitalize;
     line-height: 3rem;
@@ -181,6 +184,7 @@ body{
     text-align: center;
 }
 .footer-bottom p{
+    font-family: Didot;
     font-size: 16px;
     word-spacing: 2px;
     text-transform: capitalize;
@@ -197,6 +201,7 @@ body{
 }
 
 #footerbrief{
+    font-family:  Georgia, Times, "Times New Roman", serif;
     color: white;
     opacity: 0.7;
     font-size: unset;

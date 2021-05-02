@@ -25,8 +25,11 @@
 .blog-header h5{
     font-size: 16px;
     margin-top: 20px;
+    font-family: Times New Roman;
+    text-transform: capitalize;
 }
 .blog-title h3{
+    font-family: Times New Roman; /*Default null*/
     font-size: 26px ;
     margin-top: 20px;
 }
