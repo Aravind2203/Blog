@@ -63,7 +63,7 @@ body{
 
 /* =================================== reader list ============================= */
 .parallax4 {
-    background: url("/media/siteimages/bg.png") no-repeat center;
+    background: url("/static/media/siteimages/bg.png") no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     height: 70vh;

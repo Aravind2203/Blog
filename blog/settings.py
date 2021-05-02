@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'blogapp',
     'ckeditor',
     'ckeditor_uploader',
+    'django_social_share',
     
 ]
 
@@ -121,19 +122,38 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-if DEBUG:
+'''if DEBUG:
     STATIC_URL = '/static/'
     #STATIC_ROOT='static/'
     STATICFILES_DIRS=[
         os.path.join(BASE_DIR,'static')
     ]
     MEDIA_URL = '/media/'
-    MEDIA_ROOT='media/'
+    MEDIA_ROOT='static/media/'
+else:
+    ''STATIC_URL = '/static/'
+    STATIC_ROOT=os.path.join(BASE_DIR,'static')
+    STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'static')
+    ]
+    MEDIA_URL = '/static/media/'
+    MEDIA_ROOT=os.path.join(BASE_DIR,'static/media/')''
+    STATIC_URL = '/static/'
+    #STATIC_ROOT='static/'
+    STATIC_ROOT=os.path.join(BASE_DIR,'static')
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT=os.path.join(BASE_DIR,'static/media/')
+'''
+if(DEBUG==True):
+    STATIC_URL = '/static/'
+    MEDIA_URL = '/media/'
+    STATICFILES_DIRS=[
+         os.path.join(BASE_DIR,'static')
+    ]
+    #STATIC_ROOT=os.path.join(BASE_DIR,'static')
+    MEDIA_ROOT=os.path.join(BASE_DIR,'static/media')
 else:
     STATIC_URL = '/static/'
-    STATIC_ROOT='static/'
-    #STATICFILES_DIRS=[
-    #os.path.join(BASE_DIR,'static')
-    #]
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT='media/'
+    MEDIA_URL='static/media/'
+    STATIC_ROOT=os.path.join(BASE_DIR,'static')
+    MEDIA_ROOT=os.path.join(BASE_DIR,'static/media')

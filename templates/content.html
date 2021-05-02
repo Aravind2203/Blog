@@ -1,4 +1,5 @@
 {% load static %}
+{% load social_share %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +37,7 @@
               <a class="navbar-brand" href="/" id="navtitle">TURNOFFHUMANITY</a>
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item ">
-                  <a class="nav-link" href="index.html" id="navitems1">Home <span class="sr-only"></span></a>
+                  <a class="nav-link" href="/" id="navitems1">Home <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navitems" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,10 +50,10 @@
                       </div>
               </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html#story" id="navitems">Story</a>
+                    <a class="nav-link" href="/#story" id="navitems">Story</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#contact" id="navitems">Contact</a>
+                    <a class="nav-link" href="/#contact" id="navitems">Contact</a>
                   </li>
               </ul>
               <form class="form-inline my-2 my-lg-0" id="searchtextbox" method="GET" action="/search">
@@ -65,12 +66,12 @@
 
 
         <div class="wrapper">
-            <h5 id="all-posts">#Blogs</h5>
+            <h5 id="all-posts">#{{post.id}} {% post_to_linkedin request.get_absolute_uri "share ot whatsapp!" %}</h5>
             <div class="blog">
                
                 <div class="wrapper-blog"> 
                      <div class="blog-header">
-                        <h5>Author <i class="fas fa-crown"></i></h5>
+                        <h5>{{post.Author}} <i class="fas fa-crown"></i></h5>
                        
                      </div>
                      <div class="blog-title">

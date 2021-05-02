@@ -118,9 +118,9 @@ def categoryFilter(request,category):
         return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories})
 
 def search(request):
-    query=request.GET.get('search')
+    q=request.GET.get('search')
     
-    posts=[]
+    '''posts=[]
     for q in set(query.split()):
         post=Post.objects.filter(Q(Title__contains=q) | Q(OverView__contains=q) |Q(Content__contains=q))
         if post not in posts:
@@ -132,9 +132,25 @@ def search(request):
         categories=Category.objects.all()
         return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories})
     else:
-        return HttpResponse('''<h1>
+        return HttpResponse(''<h1>
         Bad query
-        </h1>''')
+        </h1>'')'''
+    posts=Post.objects.filter(Q(Title__contains=q) | Q(OverView__contains=q) |Q(Content__contains=q) |Q(Category__Name=q))
+    if len(posts)>0:
+        posts
+        paginator=Paginator(posts,8)
+        page_number=request.GET.get('page')
+        page_obj=paginator.get_page(page_number)
+        categories=Category.objects.all()
+        return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories})
+    else:
+        posts=Post.objects.all()
+        paginator=Paginator(posts,8)
+        page_number=request.GET.get('page')
+        page_obj=paginator.get_page(page_number)
+        categories=Category.objects.all()
+        return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories})
+
 
 def addReader(request):
     email=request.POST.get('email')
