@@ -1,15 +1,58 @@
 {% extends 'navbarfooter.html' %}
 {% load static %}
+{% load social_share %}
 {% block title %}Blog-{{post.Title}}{% endblock title %}
 <!-- {% load social_share %} -->
 {% block main %}
          <!--Css Imports -->
        <link rel="stylesheet" href="{% static 'styles/content.css' %}">
-
        <!--Body contents-->
        <div class="wrapper">
-        <h5 id="all-posts">#{{post.id}} Blog </h5> <!--{% post_to_linkedin request.get_absolute_uri "share ot whatsapp!" %}-->
-        <div class="blog">
+        <h5 id="all-posts">#{{post.id}} Blog </h5>
+        <!-- {% send_email object.title "New Blog: {{object.title}}. Check it out!" object_or_url "Email" %}
+        {% post_to_whatsapp  %} -->
+      
+        <div style="display: flex;">
+        <div class="whatsapp-this">
+            {% post_to_whatsapp object_or_url " " %}
+            <a href="{{ whatsapp_url }}" class="{{ link_class }}" target="_blank" style="padding-right: 10px; font-size:25px;">
+                <span class="fa-stack">
+                    <i  class="fa fa-circle fa-stack-2x icon-background" aria-hidden="true" style="color: #e4dcdce5;"></i>
+                    <i  class="fa fa-whatsapp fa-stack-1x" aria-hidden="true" style="color:black;"></i>
+                </span>
+            </a>
+        </div>
+        <div class="mail-this">
+            <a href="{{ mailto_url|safe }}" class="{{ link_class }}" style="font-size:25px;padding-right: 10px;">
+                <span class="fa-stack">
+                    <i  class="fa fa-circle fa-stack-2x icon-background" aria-hidden="true" style="color: #e4dcdce5;"></i>
+                    <i  class="fa fa-envelope-o fa-stack-1x" aria-hidden="true" style="color:black;"></i>
+                </span>
+            </a>
+        </div>
+    
+        <a id="ShareButton" style="color:gray;font-size:25px; cursor: pointer;">
+            <span class="fa-stack">
+                <i  class="fa fa-circle fa-stack-2x icon-background" aria-hidden="true" style="color: #e4dcdce5;"></i>
+                <i  class="fa fa-paperclip fa-stack-1x" aria-hidden="true" style="color:black;"></i>
+            </span>
+        </a>
+     
+        </div>
+        
+        <script>
+            $(document).ready(function () {
+                $(document).on("click", "#ShareButton", function (e) {
+                    $("body").append('<input id="copyURL" type="text" value="" />');
+                    $("#copyURL").val(window.location.href).select();
+                    document.execCommand("copy");
+                    $("#copyURL").remove();            
+                });
+                
+            });
+        </script>
+ 
+   <div class="blog">
            
             <div class="wrapper-blog"> 
                  <div class="blog-header">
@@ -44,7 +87,7 @@
                 <form method="POST" action="/comment/{{post.TitleSlug}}">
                 {% csrf_token %}
                 <input type="text" class="form-control" style="border-radius: 1px;" id="comment" name="comment" placeholder="Write a comment" />
-                <input type="submit"  >
+                <input type="submit" style="background-color: #e6ce92;border-radius : 4px;border: none; color: white; font-weight: 600; letter-spacing: 1px;" >
             </form>
             </div>
             <div class="comment-text-wrapper">

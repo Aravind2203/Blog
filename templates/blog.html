@@ -1,5 +1,6 @@
 {% extends 'navbarfooter.html' %}
 {% load static %}
+{% load social_share %}
 {% block title %}Blog{% endblock title %}
 {% block main %}
          <!--Css Imports -->
@@ -70,7 +71,7 @@
                         <div class="blogbox-r2-box" id="r2-b-icon1"><i class="fa fa-comments-o"></i>&nbsp;  {{post.CommentCount}}</div>
                         <div class="blogbox-r2-box" id="r2-b-icon2"><i class="fa fa-eye"></i>&nbsp; {{post.Views}}  </div>
                         <div class="blogbox-r2-box" id="r2-b-icon3"><i class="fa fa-thumbs-up"></i>&nbsp; {{post.Likes}} </div>
-                        <div class="blogbox-r2-box" id="r2-b-icon4"><a href="#"><i class="fa fa-share-alt"></i></a></div>
+                        <div class="blogbox-r2-box" id="r2-b-icon4"><a href="/posts/{{post.TitleSlug}}" style="color: blueviolet;" target="_blank" rel="rnoopener noreferrer"><i class="fa fa-external-link"></i></a></div>
                     </div>
                 </div>
             </div>
@@ -78,6 +79,8 @@
                 <img id="blogbox-img" src="{{post.Thumbnail.url}}">
             </div>
         </div>
+
+        
         {% endfor %}
             <!--Pagination-->
     <!--<div class="blog-pagination">
