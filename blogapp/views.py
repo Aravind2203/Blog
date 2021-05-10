@@ -8,8 +8,10 @@ from django.db.models import Q
 
 
 def home(request):
-    post=Post.objects.all()    
+    post=Post.objects.all()   
+
     post=post[:3]
+
     categories=Category.objects.all()
     courosels=Courosel.objects.all()
     aboutus=AboutUs.objects.all()
@@ -111,7 +113,7 @@ def categoryFilter(request,category):
     if len(categoryObjects)>0:
         categoryObject=categoryObjects[0]
         posts=Post.objects.filter(Category=categoryObject)
-        paginator=Paginator(posts,8)
+        paginator=Paginator(posts,1)
         page_number=request.GET.get('page')
         page_obj=paginator.get_page(page_number)
         categories=Category.objects.all()
@@ -141,18 +143,20 @@ def search(request):
         for i in post:
             if i not in posts:
                 posts.append(i)
-        paginator=Paginator(posts,8)
+        paginator=Paginator(posts,1)
         page_number=request.GET.get('page')
+        print(page_number)
         page_obj=paginator.get_page(page_number)
         categories=Category.objects.all()
-        return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories})
+        return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories,'q':q})
     else:
         posts=Post.objects.all()
-        paginator=Paginator(posts,8)
+        paginator=Paginator(posts,1)
         page_number=request.GET.get('page')
+        print(page_number)
         page_obj=paginator.get_page(page_number)
         categories=Category.objects.all()
-        return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories})
+        return render(request,'blog.html',context={'page_obj':page_obj,'categories':categories,'q':q})
 
 
 def addReader(request):
