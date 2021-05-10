@@ -3,6 +3,7 @@
 {% block title %}Best Blogging Site-TurnOffHumanity{% endblock title %}
 
 {% block main %}
+
          <!--Css Imports -->
        <link rel="stylesheet" href="{% static 'styles/index.css' %}">
 
@@ -103,9 +104,10 @@
             <h2>Join My ReaderList Now</h2>
         </div>
         <div class="contact">
-          <form method="POST" action="addemail" >
+          <form method="POST" action="addemail" id="readlist" >
             {% csrf_token %}
         <input type="email" class="form-control" style="border-radius: 1px;" id="exampleFormControlInput1" placeholder="Email Address" required name="email"/>
+        <input type="text" class="form-control"  style="border-radius: 1px;margin-top: 18px; margin-bottom: 10px;"  id="exampleFormControlInput1" placeholder="Your Message" required name="msg"/>
         <button type="submit" class="btn-contact">SIGN UP</button>
             </form>
       </div>

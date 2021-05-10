@@ -46,10 +46,11 @@ INSTALLED_APPS = [
     #editor
     'ckeditor',
     'ckeditor_uploader',
-    'django_social_share',
     #otp
     'django_otp',
     'django_otp.plugins.otp_totp',
+    #social share
+    'django_social_share',
   
 ]
 
