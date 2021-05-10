@@ -31,17 +31,27 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    #theme admin
+    'admin_interface',
+    'colorfield', 
+    #django package 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #app
     'blogapp',
+    #editor
     'ckeditor',
     'ckeditor_uploader',
+    #otp
+    'django_otp',
+    'django_otp.plugins.otp_totp',
+    #social share
     'django_social_share',
-    
+  
 ]
 
 CKEDITOR_UPLOAD_PATH='uploads/'
@@ -53,7 +63,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_otp.middleware.OTPMiddleware'
 ]
+
+X_FRAME_OPTIONS='SAMEORIGIN'
+SILENCED_SYSTEM_CHECKS = ['security.W019']
 
 ROOT_URLCONF = 'blog.urls'
 
@@ -148,10 +162,11 @@ if(DEBUG==True):
     STATIC_URL = '/static/'
     MEDIA_URL = '/media/'
     STATICFILES_DIRS=[
-         os.path.join(BASE_DIR,'static')
+         os.path.join(BASE_DIR,'/static')
     ]
-    #STATIC_ROOT=os.path.join(BASE_DIR,'static')
     MEDIA_ROOT=os.path.join(BASE_DIR,'static/media')
+    STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
 else:
     STATIC_URL = '/static/'
     MEDIA_URL='static/media/'
